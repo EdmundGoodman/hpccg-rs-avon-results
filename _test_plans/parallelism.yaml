@@ -121,47 +121,9 @@ run_configurations:
       - "cargo build --release"
     run_command: "mpirun ./target/release/hpccg-rs"
 
-  "cpp-kokkos":
-    sbatch_config:
-      "nodes": 1
-      "ntasks-per-node": 1
-      "cpus-per-task": 32
-      "exclusive": "mcs"
-      "mem": 40000
-    module_loads:
-      - "GCC/11.3.0"
-      - "OpenMPI/4.1.4"
-      - "LAMMPS/23Jun2022-kokkos"
-    environment_variables:
-      "OMP_NUM_THREADS": 32
-      "OMP_PROC_BIND": "spread"
-      "OMP_PLACES": "threads"
-    directory: "../0_cpp_versions/5_kokkos"
-    build_commands:
-      - "make no_yaml"
-      - "make -j 8"
-    run_command: "./test_HPCCG"
-
-  "cpp-kokkos-mpi":
-    sbatch_config:
-      "exclusive": "mcs"
-      "mem": 40000
-    module_loads:
-      - "GCC/11.3.0"
-      - "OpenMPI/4.1.4"
-      - "LAMMPS/23Jun2022-kokkos"
-    environment_variables:
-      "OMP_NUM_THREADS": 2
-      "OMP_PROC_BIND": "spread"
-      "OMP_PLACES": "threads"
-    directory: "../0_cpp_versions/6_kokkos_mpi"
-    build_commands:
-      - "make no_yaml"
-      - "make -j 8"
-    run_command: "mpirun ./test_HPCCG"
-
 benches:
   "serial":
+    enabled: False
     run_configurations:
       - "cpp-reference"
       - "rust-reference"
@@ -187,6 +149,7 @@ benches:
           y: "Wall time (s)"
 
   "multi-threaded":
+    enabled: False
     run_configurations:
       - "cpp-openmp"
       - "rust-rayon"
@@ -248,9 +211,9 @@ benches:
         - "25 25 25"
         - "50 50 50"
         - "100 100 100"
+        - "150 150 150"
         - "200 200 200"
-        - "300 300 300"
-        - "400 400 400"
+        - "250 250 250"
       sbatch_config:
         - { "nodes": 1, "ntasks-per-node": 2 }
         - { "nodes": 2, "ntasks-per-node": 2 }
@@ -283,10 +246,12 @@ benches:
         - "Threads"
     matrix:
       args:
+        - "25 25 25"
+        - "50 50 50"
         - "100 100 100"
+        - "150 150 150"
         - "200 200 200"
-        - "300 300 300"
-        - "400 400 400"
+        - "250 250 250"
       [sbatch_config, environment_variables]:
         - [
             { "nodes": 4, "ntasks-per-node": 1, "cpus-per-task": 32 },
@@ -307,72 +272,3 @@ benches:
             - "Nodes"
             - "Tasks per Node"
             - "Threads"
-
-  "cpp-kokkos-rust-parallel":
-    run_configurations:
-      - "cpp-openmp"
-      - "cpp-kokkos"
-      - "rust-rayon"
-    reruns:
-      number: 5
-      highest_discard: 1
-      unaggregatable_metrics:
-        - "Mesh x size"
-    matrix:
-      args:
-        - "25 25 25"
-        - "50 50 50"
-        - "100 100 100"
-        - "200 200 200"
-        - "300 300 300"
-        - "400 400 400"
-    analysis:
-      metrics:
-        "Mesh x size": "nx: (\\d+)"
-        "Wall time (s)": "real\\s([\\d\\.]+)\nuser"
-      line_plots:
-        - title: "C++, Kokkos, and Rust with Multi-Threading Version Comparison"
-          x: "Mesh x size"
-          y: "Wall time (s)"
-      bar_charts:
-        - title: "C++, Kokkos, and Rust with Multi-Threading Version Comparison"
-          y: "Wall time (s)"
-          fix_metrics:
-            "Mesh x size": 400
-
-  "cpp-kokkos-rust-hybrid":
-    run_configurations:
-      - "cpp-hybrid"
-      - "cpp-kokkos-mpi"
-      - "rust-hybrid"
-    reruns:
-      number: 5
-      highest_discard: 1
-      unaggregatable_metrics:
-        - "Mesh x size"
-    matrix:
-      args:
-        - "25 25 25"
-        - "50 50 50"
-        - "100 100 100"
-        - "200 200 200"
-        - "300 300 300"
-        - "400 400 400"
-      [sbatch_config, environment_variables]:
-        - [
-            { "nodes": 4, "ntasks-per-node": 1, "cpus-per-task": 32 },
-            { "OMP_NUM_THREADS": 32, "RAYON_NUM_THREADS": 32 },
-          ]
-    analysis:
-      metrics:
-        "Mesh x size": "nx: (\\d+)"
-        "Wall time (s)": "real\\s([\\d\\.]+)\nuser"
-      line_plots:
-        - title: "C++, Kokkos, and Rust with MPI & Multi-Threading Version Comparison"
-          x: "Mesh x size"
-          y: "Wall time (s)"
-      bar_charts:
-        - title: "C++, Kokkos, and Rust with MPI & Multi-Threading Version Comparison"
-          y: "Wall time (s)"
-          fix_metrics:
-            "Mesh x size": 400
