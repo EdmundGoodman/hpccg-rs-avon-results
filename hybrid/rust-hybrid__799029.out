@@ -1,0 +1,175 @@
+===== CONFIGURATION =====
+=== MODULE LOADS ===
+=== ENVIRONMENT VARIABLES ===
+OMP_NUM_THREADS=32
+RAYON_NUM_THREADS=32
+=== CPU ARCHITECTURE ===
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              48
+On-line CPU(s) list: 0-47
+Thread(s) per core:  1
+Core(s) per socket:  24
+Socket(s):           2
+NUMA node(s):        4
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               85
+Model name:          Intel(R) Xeon(R) Platinum 8268 CPU @ 2.90GHz
+Stepping:            7
+CPU MHz:             3499.999
+BogoMIPS:            5800.00
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            1024K
+L3 cache:            36608K
+NUMA node0 CPU(s):   0,4,8,12,16,20,24,28,32,36,40,44
+NUMA node1 CPU(s):   1,5,9,13,17,21,25,29,33,37,41,45
+NUMA node2 CPU(s):   2,6,10,14,18,22,26,30,34,38,42,46
+NUMA node3 CPU(s):   3,7,11,15,19,23,27,31,35,39,43,47
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single intel_ppin ssbd mba ibrs ibpb stibp ibrs_enhanced fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts pku ospke avx512_vnni md_clear flush_l1d arch_capabilities
+=== SLURM CONFIG ===
+JobId=799029 JobName=rust-hybrid2v8pm_fc.sbatch
+   UserId=csuxvf(18094) GroupId=csuxvf(18094) MCS_label=N/A
+   Priority=759209 Nice=0 Account=dcsug QOS=dcsug
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:05 TimeLimit=00:10:00 TimeMin=N/A
+   SubmitTime=2024-04-12T23:24:01 EligibleTime=2024-04-12T23:24:01
+   AccrueTime=2024-04-12T23:24:01
+   StartTime=2024-04-12T23:39:57 EndTime=2024-04-12T23:49:57 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-04-12T23:39:57
+   Partition=compute AllocNode:Sid=login01:1212000
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=node[016-018,022]
+   BatchHost=node016
+   NumNodes=4 NumCPUs=128 NumTasks=4 CPUs/Task=32 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=128,mem=160000M,node=4,billing=128
+   Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=*
+   MinCPUsNode=32 MinMemoryNode=40000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=MCS Contiguous=0 Licenses=(null) Network=(null)
+   Command=/gpfs/home/dcs/csuxvf/Desktop/hpccg-rs/hpc-multibench/rust-hybrid2v8pm_fc.sbatch
+   WorkDir=/gpfs/home/dcs/csuxvf/Desktop/hpccg-rs/hpc-multibench
+   StdErr=/gpfs/home/dcs/csuxvf/Desktop/hpccg-rs/hpc-multibench/results/hybrid/rust-hybrid__799029.out
+   StdIn=/dev/null
+   StdOut=/gpfs/home/dcs/csuxvf/Desktop/hpccg-rs/hpc-multibench/results/hybrid/rust-hybrid__799029.out
+   Power=
+   NtasksPerTRES:0
+
+=== RUN INSTANTIATION ===
+{args: 100 100 100, sbatch_config: {nodes: 4, ntasks-per-node: 1, cpus-per-task: 32}, environment_variables: {OMP_NUM_THREADS: 32, RAYON_NUM_THREADS: 32}}
+
+===== BUILD =====
+   Compiling proc-macro2 v1.0.79
+   Compiling unicode-ident v1.0.12
+   Compiling glob v0.3.1
+   Compiling libc v0.2.153
+   Compiling rustix v0.38.32
+   Compiling prettyplease v0.2.17
+   Compiling cc v1.0.90
+   Compiling regex-syntax v0.8.3
+   Compiling cfg-if v1.0.0
+   Compiling pkg-config v0.3.30
+   Compiling shell-words v1.1.0
+   Compiling memchr v2.7.2
+   Compiling linux-raw-sys v0.4.13
+   Compiling minimal-lexical v0.2.1
+   Compiling bitflags v2.5.0
+   Compiling home v0.5.9
+   Compiling crossbeam-utils v0.8.19
+   Compiling either v1.10.0
+   Compiling bindgen v0.68.1
+   Compiling lazy_static v1.4.0
+   Compiling peeking_take_while v0.1.2
+   Compiling rustc-hash v1.1.0
+   Compiling lazycell v1.3.0
+   Compiling log v0.4.21
+   Compiling shlex v1.3.0
+   Compiling autocfg v1.2.0
+   Compiling thiserror v1.0.58
+   Compiling rayon-core v1.12.1
+   Compiling custom_derive v0.1.7
+   Compiling smallvec v1.13.2
+   Compiling once_cell v1.19.0
+   Compiling libloading v0.8.3
+   Compiling conv v0.3.3
+   Compiling build-probe-mpi v0.1.3
+   Compiling memoffset v0.9.1
+   Compiling clang-sys v1.7.0
+   Compiling nom v7.1.3
+   Compiling mpi v0.7.0
+   Compiling libffi-sys v2.3.0
+   Compiling crossbeam-epoch v0.9.18
+   Compiling regex-automata v0.4.6
+   Compiling crossbeam-deque v0.8.5
+   Compiling cexpr v0.6.0
+   Compiling quote v1.0.35
+   Compiling syn v2.0.57
+   Compiling rayon v1.10.0
+   Compiling which v4.4.2
+   Compiling regex v1.10.4
+   Compiling thiserror-impl v1.0.58
+   Compiling mpi-derive v0.1.1
+   Compiling mpi-sys v0.2.1
+   Compiling libffi v3.2.0
+   Compiling hpccg-rs v0.1.0 (/gpfs/home/dcs/csuxvf/Desktop/hpccg-rs/8_hybrid)
+    Finished release [optimized + debuginfo] target(s) in 1m 05s
+
+===== RUN =====
+Initial Residual = +4.68575e3
+Iteration = 15 , Residual = +6.36217e1
+Iteration = 30 , Residual = +4.16789e-1
+Iteration = 45 , Residual = +2.56321e-3
+Iteration = 60 , Residual = +1.17629e-5
+Iteration = 75 , Residual = +7.70559e-8
+Iteration = 90 , Residual = +4.79079e-10
+Iteration = 105 , Residual = +3.23644e-12
+Iteration = 120 , Residual = +1.99887e-14
+Iteration = 135 , Residual = +1.25928e-16
+Iteration = 149 , Residual = +1.20695e-18
+Mini-Application Name: hpccg
+Mini-Application Version: 1.0
+Parallelism:
+  Number of MPI ranks: 4
+  Rayon disabled
+Dimensions:
+  nx: 100
+  ny: 100
+  nz: 100
+Number of iterations: 149
+Final residual: 1.20695e-18
+#********** Performance Summary (times in sec) ***********
+Time Summary:
+  Total: 6.1301
+  DDOT: 0.6301
+  WAXPBY: 0.7770
+  SPARSEMV: 4.5811
+FLOPS Summary:
+  Total: 38144000000
+  DDOT: 2384000000
+  WAXPBY: 3576000000
+  SPARSEMV: 32184000000
+MFLOPS Summary:
+  Total: 6222.4361
+  DDOT: 3783.3703
+  WAXPBY: 4602.5417
+  SPARSEMV: 7025.3302
+DDOT Timing Variations:
+  Min DDOT MPI_Allreduce time: 0.1234
+  Max DDOT MPI_Allreduce time: 0.1835
+  Avg DDOT MPI_Allreduce time: 0.6215
+SPARSEMV OVERHEADS:
+  SPARSEMV MFLOPS W OVERHEAD: 2886.0984
+  SPARSEMV PARALLEL OVERHEAD Time: 6.5702
+  SPARSEMV PARALLEL OVERHEAD Pct: 58.9187
+  SPARSEMV PARALLEL OVERHEAD Setup Time: 0.1893
+  SPARSEMV PARALLEL OVERHEAD Setup Pct: 1.6975
+  SPARSEMV PARALLEL OVERHEAD Bdry Exch Time: 6.3810
+  SPARSEMV PARALLEL OVERHEAD Bdry Exch Pct: 57.2212
+Difference between computed and exact = 4.99600e-15.
+real 7.70
+user 6.55
+sys 0.48

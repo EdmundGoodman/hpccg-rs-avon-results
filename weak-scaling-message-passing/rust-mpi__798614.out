@@ -1,0 +1,119 @@
+===== CONFIGURATION =====
+=== MODULE LOADS ===
+=== CPU ARCHITECTURE ===
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              48
+On-line CPU(s) list: 0-47
+Thread(s) per core:  1
+Core(s) per socket:  24
+Socket(s):           2
+NUMA node(s):        4
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               85
+Model name:          Intel(R) Xeon(R) Platinum 8268 CPU @ 2.90GHz
+Stepping:            7
+CPU MHz:             2599.231
+BogoMIPS:            5800.00
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            1024K
+L3 cache:            36608K
+NUMA node0 CPU(s):   0,4,8,12,16,20,24,28,32,40,44,46
+NUMA node1 CPU(s):   1,5,9,13,17,21,25,29,33,37,41,45
+NUMA node2 CPU(s):   2,6,10,14,18,22,26,30,34,36,38,42
+NUMA node3 CPU(s):   3,7,11,15,19,23,27,31,35,39,43,47
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single intel_ppin ssbd mba ibrs ibpb stibp ibrs_enhanced fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts pku ospke avx512_vnni md_clear flush_l1d arch_capabilities
+=== SLURM CONFIG ===
+JobId=798614 JobName=rust-mpi4pjgkcv9.sbatch
+   UserId=csuxvf(18094) GroupId=csuxvf(18094) MCS_label=N/A
+   Priority=759197 Nice=0 Account=dcsug QOS=dcsug
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:06 TimeLimit=00:10:00 TimeMin=N/A
+   SubmitTime=2024-04-12T22:30:37 EligibleTime=2024-04-12T22:31:57
+   AccrueTime=2024-04-12T22:31:57
+   StartTime=2024-04-12T22:45:01 EndTime=2024-04-12T22:55:01 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-04-12T22:45:01
+   Partition=compute AllocNode:Sid=login01:1212000
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=node[061,064]
+   BatchHost=node061
+   NumNodes=2 NumCPUs=16 NumTasks=16 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=16,mem=80000M,node=2,billing=16
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=40000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=MCS Contiguous=0 Licenses=(null) Network=(null)
+   Command=/gpfs/home/dcs/csuxvf/Desktop/hpccg-rs/hpc-multibench/rust-mpi4pjgkcv9.sbatch
+   WorkDir=/gpfs/home/dcs/csuxvf/Desktop/hpccg-rs/hpc-multibench
+   StdErr=/gpfs/home/dcs/csuxvf/Desktop/hpccg-rs/hpc-multibench/results/weak-scaling-message-passing/rust-mpi__798614.out
+   StdIn=/dev/null
+   StdOut=/gpfs/home/dcs/csuxvf/Desktop/hpccg-rs/hpc-multibench/results/weak-scaling-message-passing/rust-mpi__798614.out
+   Power=
+   NtasksPerTRES:0
+
+=== RUN INSTANTIATION ===
+{args: 64 64 64, sbatch_config: {ntasks: 16, nodes: 2}}
+
+===== BUILD =====
+run configuration was pre-built
+
+===== RUN =====
+Initial Residual = +5.58746e3
+Iteration = 15 , Residual = +7.19055e1
+Iteration = 30 , Residual = +4.04189e-1
+Iteration = 45 , Residual = +1.29556e-3
+Iteration = 60 , Residual = +7.39304e-6
+Iteration = 75 , Residual = +3.50312e-8
+Iteration = 90 , Residual = +2.37424e-10
+Iteration = 105 , Residual = +1.54436e-12
+Iteration = 120 , Residual = +8.16975e-15
+Iteration = 135 , Residual = +5.12996e-17
+Iteration = 149 , Residual = +4.68143e-19
+Mini-Application Name: hpccg
+Mini-Application Version: 1.0
+Parallelism:
+  Number of MPI ranks: 16
+  Rayon disabled
+Dimensions:
+  nx: 64
+  ny: 64
+  nz: 64
+Number of iterations: 149
+Final residual: 4.68143e-19
+#********** Performance Summary (times in sec) ***********
+Time Summary:
+  Total: 3.8420
+  DDOT: 0.6428
+  WAXPBY: 0.5979
+  SPARSEMV: 2.4661
+FLOPS Summary:
+  Total: 39996882944
+  DDOT: 2499805184
+  WAXPBY: 3749707776
+  SPARSEMV: 33747369984
+MFLOPS Summary:
+  Total: 10410.5385
+  DDOT: 3889.1917
+  WAXPBY: 6271.5994
+  SPARSEMV: 13684.3490
+DDOT Timing Variations:
+  Min DDOT MPI_Allreduce time: 0.0831
+  Max DDOT MPI_Allreduce time: 1.7394
+  Avg DDOT MPI_Allreduce time: 10.9375
+SPARSEMV OVERHEADS:
+  SPARSEMV MFLOPS W OVERHEAD: 3278.0499
+  SPARSEMV PARALLEL OVERHEAD Time: 7.8288
+  SPARSEMV PARALLEL OVERHEAD Pct: 76.0453
+  SPARSEMV PARALLEL OVERHEAD Setup Time: 1.9789
+  SPARSEMV PARALLEL OVERHEAD Setup Pct: 19.2221
+  SPARSEMV PARALLEL OVERHEAD Bdry Exch Time: 5.8499
+  SPARSEMV PARALLEL OVERHEAD Bdry Exch Pct: 56.8232
+Difference between computed and exact = 6.43929e-15.
+real 9.36
+user 49.34
+sys 2.30

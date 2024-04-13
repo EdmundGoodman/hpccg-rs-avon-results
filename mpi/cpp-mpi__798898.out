@@ -1,0 +1,137 @@
+===== CONFIGURATION =====
+=== MODULE LOADS ===
+=== CPU ARCHITECTURE ===
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              48
+On-line CPU(s) list: 0-47
+Thread(s) per core:  1
+Core(s) per socket:  24
+Socket(s):           2
+NUMA node(s):        4
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               85
+Model name:          Intel(R) Xeon(R) Platinum 8268 CPU @ 2.90GHz
+Stepping:            7
+CPU MHz:             3500.009
+BogoMIPS:            5800.00
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            1024K
+L3 cache:            36608K
+NUMA node0 CPU(s):   0,4,8,12,16,20,24,28,32,36,40,44
+NUMA node1 CPU(s):   1,5,9,13,17,21,25,29,33,37,41,45
+NUMA node2 CPU(s):   2,6,10,14,18,22,26,30,34,38,42,46
+NUMA node3 CPU(s):   3,7,11,15,19,23,27,31,35,39,43,47
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single intel_ppin ssbd mba ibrs ibpb stibp ibrs_enhanced fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts pku ospke avx512_vnni md_clear flush_l1d arch_capabilities
+=== SLURM CONFIG ===
+JobId=798898 JobName=cpp-mpi5wubt6h8.sbatch
+   UserId=csuxvf(18094) GroupId=csuxvf(18094) MCS_label=N/A
+   Priority=759202 Nice=0 Account=dcsug QOS=dcsug
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:06 TimeLimit=00:10:00 TimeMin=N/A
+   SubmitTime=2024-04-12T23:23:54 EligibleTime=2024-04-12T23:24:27
+   AccrueTime=2024-04-12T23:24:27
+   StartTime=2024-04-12T23:35:02 EndTime=2024-04-12T23:45:02 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-04-12T23:35:02
+   Partition=compute AllocNode:Sid=login01:1212000
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=node[064,069-071]
+   BatchHost=node064
+   NumNodes=4 NumCPUs=16 NumTasks=8 CPUs/Task=2 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=16,mem=160000M,node=4,billing=16
+   Socks/Node=* NtasksPerN:B:S:C=2:0:*:* CoreSpec=*
+   MinCPUsNode=4 MinMemoryNode=40000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=MCS Contiguous=0 Licenses=(null) Network=(null)
+   Command=/gpfs/home/dcs/csuxvf/Desktop/hpccg-rs/hpc-multibench/cpp-mpi5wubt6h8.sbatch
+   WorkDir=/gpfs/home/dcs/csuxvf/Desktop/hpccg-rs/hpc-multibench
+   StdErr=/gpfs/home/dcs/csuxvf/Desktop/hpccg-rs/hpc-multibench/results/mpi/cpp-mpi__798898.out
+   StdIn=/dev/null
+   StdOut=/gpfs/home/dcs/csuxvf/Desktop/hpccg-rs/hpc-multibench/results/mpi/cpp-mpi__798898.out
+   Power=
+   NtasksPerTRES:0
+
+=== RUN INSTANTIATION ===
+{args: 300 300 300, sbatch_config: {nodes: 2, ntasks-per-node: 2}}
+
+===== BUILD =====
+run configuration was pre-built
+
+===== RUN =====
+Must increase max_external in HPC_Sparse_Matrix.hpp
+[node071:833185] *** Process received signal ***
+[node071:833185] Signal: Aborted (6)
+[node071:833185] Signal code:  (-6)
+[node071:833185] [ 0] /lib64/libc.so.6(+0x37400)[0x152300d5f400]
+[node071:833185] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x152300d5f37f]
+[node071:833185] [ 2] /lib64/libc.so.6(abort+0x127)[0x152300d49db5]
+[node071:833185] [ 3] ./test_HPCCG[0x408ccc]
+[node071:833185] [ 4] ./test_HPCCG[0x404780]
+[node071:833185] [ 5] /lib64/libc.so.6(__libc_start_main+0xf3)[0x152300d4b493]
+[node071:833185] [ 6] ./test_HPCCG[0x40658e]
+[node071:833185] *** End of error message ***
+Must increase max_external in HPC_Sparse_Matrix.hpp
+[node070:89841] *** Process received signal ***
+[node070:89841] Signal: Aborted (6)
+[node070:89841] Signal code:  (-6)
+[node070:89841] [ 0] /lib64/libc.so.6(+0x37400)[0x1518d387e400]
+[node070:89841] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x1518d387e37f]
+[node070:89841] [ 2] /lib64/libc.so.6(abort+0x127)[0x1518d3868db5]
+[node070:89841] [ 3] ./test_HPCCG[0x408ccc]
+[node070:89841] [ 4] ./test_HPCCG[0x404780]
+[node070:89841] [ 5] /lib64/libc.so.6(__libc_start_main+0xf3)[0x1518d386a493]
+[node070:89841] [ 6] ./test_HPCCG[0x40658e]
+[node070:89841] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+Must increase max_external in HPC_Sparse_Matrix.hpp
+[node064:371917] *** Process received signal ***
+[node064:371917] Signal: Aborted (6)
+[node064:371917] Signal code:  (-6)
+[node064:371917] [ 0] /lib64/libc.so.6(+0x37400)[0x147db8ffb400]
+[node064:371917] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x147db8ffb37f]
+[node064:371917] [ 2] /lib64/libc.so.6(abort+0x127)[0x147db8fe5db5]
+[node064:371917] [ 3] ./test_HPCCG[0x408ccc]
+[node064:371917] [ 4] ./test_HPCCG[0x404780]
+[node064:371917] [ 5] /lib64/libc.so.6(__libc_start_main+0xf3)[0x147db8fe7493]
+[node064:371917] [ 6] ./test_HPCCG[0x40658e]
+[node064:371917] *** End of error message ***
+Must increase max_external in HPC_Sparse_Matrix.hpp
+[node069:1689398] *** Process received signal ***
+[node069:1689398] Signal: Aborted (6)
+[node069:1689398] Signal code:  (-6)
+[node069:1689398] [ 0] /lib64/libc.so.6(+0x37400)[0x14f210b47400]
+[node069:1689398] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x14f210b4737f]
+[node069:1689398] [ 2] /lib64/libc.so.6(abort+0x127)[0x14f210b31db5]
+[node069:1689398] [ 3] ./test_HPCCG[0x408ccc]
+[node069:1689398] [ 4] ./test_HPCCG[0x404780]
+[node069:1689398] [ 5] /lib64/libc.so.6(__libc_start_main+0xf3)[0x14f210b33493]
+[node069:1689398] [ 6] ./test_HPCCG[0x40658e]
+[node069:1689398] *** End of error message ***
+[1712961313.032796] [node071:833186:0]        mm_posix.c:218  UCX  ERROR open(file_name=/proc/833185/fd/25 flags=0x0) failed: No such file or directory
+Must increase max_external in HPC_Sparse_Matrix.hpp
+[node070:89840] *** Process received signal ***
+[node070:89840] Signal: Aborted (6)
+[node070:89840] Signal code:  (-6)
+[node070:89840] [ 0] /lib64/libc.so.6(+0x37400)[0x14cee1177400]
+[node070:89840] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x14cee117737f]
+[node070:89840] [ 2] /lib64/libc.so.6(abort+0x127)[0x14cee1161db5]
+[node070:89840] [ 3] ./test_HPCCG[0x408ccc]
+[node070:89840] [ 4] ./test_HPCCG[0x404780]
+[node070:89840] [ 5] /lib64/libc.so.6(__libc_start_main+0xf3)[0x14cee1163493]
+[node070:89840] [ 6] ./test_HPCCG[0x40658e]
+[node070:89840] *** End of error message ***
+--------------------------------------------------------------------------
+mpirun noticed that process rank 6 with PID 833185 on node node071 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+2 total processes killed (some possibly by mpirun during cleanup)
+real 5.96
+user 4.61
+sys 3.80

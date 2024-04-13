@@ -1,0 +1,195 @@
+===== CONFIGURATION =====
+=== MODULE LOADS ===
+=== CPU ARCHITECTURE ===
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              48
+On-line CPU(s) list: 0-47
+Thread(s) per core:  1
+Core(s) per socket:  24
+Socket(s):           2
+NUMA node(s):        4
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               85
+Model name:          Intel(R) Xeon(R) Platinum 8268 CPU @ 2.90GHz
+Stepping:            7
+CPU MHz:             2616.231
+BogoMIPS:            5800.00
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            1024K
+L3 cache:            36608K
+NUMA node0 CPU(s):   0,4,8,12,16,20,24,28,32,40,44,46
+NUMA node1 CPU(s):   1,5,9,13,17,21,25,29,33,37,41,45
+NUMA node2 CPU(s):   2,6,10,14,18,22,26,30,34,36,38,42
+NUMA node3 CPU(s):   3,7,11,15,19,23,27,31,35,39,43,47
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single intel_ppin ssbd mba ibrs ibpb stibp ibrs_enhanced fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts pku ospke avx512_vnni md_clear flush_l1d arch_capabilities
+=== SLURM CONFIG ===
+JobId=798988 JobName=rust-mpinpetk7kc.sbatch
+   UserId=csuxvf(18094) GroupId=csuxvf(18094) MCS_label=N/A
+   Priority=759204 Nice=0 Account=dcsug QOS=dcsug
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:03 TimeLimit=00:10:00 TimeMin=N/A
+   SubmitTime=2024-04-12T23:23:59 EligibleTime=2024-04-12T23:25:57
+   AccrueTime=2024-04-12T23:25:57
+   StartTime=2024-04-12T23:51:57 EndTime=2024-04-13T00:01:57 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-04-12T23:51:57
+   Partition=compute AllocNode:Sid=login01:1212000
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=node[061,064,069-070]
+   BatchHost=node061
+   NumNodes=4 NumCPUs=16 NumTasks=8 CPUs/Task=2 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=16,mem=160000M,node=4,billing=16
+   Socks/Node=* NtasksPerN:B:S:C=2:0:*:* CoreSpec=*
+   MinCPUsNode=4 MinMemoryNode=40000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=MCS Contiguous=0 Licenses=(null) Network=(null)
+   Command=/gpfs/home/dcs/csuxvf/Desktop/hpccg-rs/hpc-multibench/rust-mpinpetk7kc.sbatch
+   WorkDir=/gpfs/home/dcs/csuxvf/Desktop/hpccg-rs/hpc-multibench
+   StdErr=/gpfs/home/dcs/csuxvf/Desktop/hpccg-rs/hpc-multibench/results/mpi/rust-mpi__798988.out
+   StdIn=/dev/null
+   StdOut=/gpfs/home/dcs/csuxvf/Desktop/hpccg-rs/hpc-multibench/results/mpi/rust-mpi__798988.out
+   Power=
+   NtasksPerTRES:0
+
+=== RUN INSTANTIATION ===
+{args: 300 300 300, sbatch_config: {nodes: 2, ntasks-per-node: 2}}
+
+===== BUILD =====
+run configuration was pre-built
+
+===== RUN =====
+thread 'main' panicked at src/hpccg/make_local_matrix.rs:107:25:
+Must increase `MAX_EXTERNAL` from 100000
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[node064:380801] *** Process received signal ***
+[node064:380801] Signal: Aborted (6)
+[node064:380801] Signal code:  (-6)
+[node064:380801] [ 0] /lib64/libpthread.so.0(+0x12b20)[0x14939140ab20]
+[node064:380801] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x14939106a37f]
+[node064:380801] [ 2] /lib64/libc.so.6(abort+0x127)[0x149391054db5]
+[node064:380801] [ 3] ./target/release/hpccg-rs(+0x23a67)[0x55aaff16ea67]
+[node064:380801] [ 4] ./target/release/hpccg-rs(+0x23a56)[0x55aaff16ea56]
+[node064:380801] [ 5] ./target/release/hpccg-rs(+0x56ae6)[0x55aaff1a1ae6]
+[node064:380801] [ 6] ./target/release/hpccg-rs(+0x58af9)[0x55aaff1a3af9]
+[node064:380801] [ 7] ./target/release/hpccg-rs(+0x5882c)[0x55aaff1a382c]
+[node064:380801] [ 8] ./target/release/hpccg-rs(+0x58786)[0x55aaff1a3786]
+[node064:380801] [ 9] ./target/release/hpccg-rs(+0x58771)[0x55aaff1a3771]
+[node064:380801] [10] ./target/release/hpccg-rs(+0x6fd4)[0x55aaff151fd4]
+[node064:380801] [11] ./target/release/hpccg-rs(+0xf495)[0x55aaff15a495]
+[node064:380801] [12] ./target/release/hpccg-rs(+0x109bc)[0x55aaff15b9bc]
+[node064:380801] [13] ./target/release/hpccg-rs(+0x97a3)[0x55aaff1547a3]
+[node064:380801] [14] ./target/release/hpccg-rs(+0x9d71)[0x55aaff154d71]
+[node064:380801] [15] /lib64/libc.so.6(__libc_start_main+0xf3)[0x149391056493]
+[node064:380801] [16] ./target/release/hpccg-rs(+0x96de)[0x55aaff1546de]
+[node064:380801] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+thread 'main' panicked at src/hpccg/make_local_matrix.rs:107:25:
+Must increase `MAX_EXTERNAL` from 100000
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[node061:40519] *** Process received signal ***
+[node061:40519] Signal: Aborted (6)
+[node061:40519] Signal code:  (-6)
+[node061:40519] [ 0] /lib64/libpthread.so.0(+0x12b20)[0x151fcdb23b20]
+[node061:40519] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x151fcd78337f]
+[node061:40519] [ 2] /lib64/libc.so.6(abort+0x127)[0x151fcd76ddb5]
+[node061:40519] [ 3] ./target/release/hpccg-rs(+0x23a67)[0x55c72d2c8a67]
+[node061:40519] [ 4] ./target/release/hpccg-rs(+0x23a56)[0x55c72d2c8a56]
+[node061:40519] [ 5] ./target/release/hpccg-rs(+0x56ae6)[0x55c72d2fbae6]
+[node061:40519] [ 6] ./target/release/hpccg-rs(+0x58af9)[0x55c72d2fdaf9]
+[node061:40519] [ 7] ./target/release/hpccg-rs(+0x5882c)[0x55c72d2fd82c]
+[node061:40519] [ 8] ./target/release/hpccg-rs(+0x58786)[0x55c72d2fd786]
+[node061:40519] [ 9] ./target/release/hpccg-rs(+0x58771)[0x55c72d2fd771]
+[node061:40519] [10] ./target/release/hpccg-rs(+0x6fd4)[0x55c72d2abfd4]
+[node061:40519] [11] ./target/release/hpccg-rs(+0xf495)[0x55c72d2b4495]
+[node061:40519] [12] ./target/release/hpccg-rs(+0x109bc)[0x55c72d2b59bc]
+[node061:40519] [13] ./target/release/hpccg-rs(+0x97a3)[0x55c72d2ae7a3]
+[node061:40519] [14] ./target/release/hpccg-rs(+0x9d71)[0x55c72d2aed71]
+[node061:40519] [15] /lib64/libc.so.6(__libc_start_main+0xf3)[0x151fcd76f493]
+[node061:40519] [16] ./target/release/hpccg-rs(+0x96de)[0x55c72d2ae6de]
+[node061:40519] *** End of error message ***
+thread 'main' panicked at src/hpccg/make_local_matrix.rs:107:25:
+Must increase `MAX_EXTERNAL` from 100000
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[node070:98380] *** Process received signal ***
+[node070:98380] Signal: Aborted (6)
+[node070:98380] Signal code:  (-6)
+[node070:98380] [ 0] /lib64/libpthread.so.0(+0x12b20)[0x154a318a5b20]
+[node070:98380] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x154a3150537f]
+[node070:98380] [ 2] /lib64/libc.so.6(abort+0x127)[0x154a314efdb5]
+[node070:98380] [ 3] ./target/release/hpccg-rs(+0x23a67)[0x55dca57d6a67]
+[node070:98380] [ 4] ./target/release/hpccg-rs(+0x23a56)[0x55dca57d6a56]
+[node070:98380] [ 5] ./target/release/hpccg-rs(+0x56ae6)[0x55dca5809ae6]
+[node070:98380] [ 6] ./target/release/hpccg-rs(+0x58af9)[0x55dca580baf9]
+[node070:98380] [ 7] ./target/release/hpccg-rs(+0x5882c)[0x55dca580b82c]
+[node070:98380] [ 8] ./target/release/hpccg-rs(+0x58786)[0x55dca580b786]
+[node070:98380] [ 9] ./target/release/hpccg-rs(+0x58771)[0x55dca580b771]
+[node070:98380] [10] ./target/release/hpccg-rs(+0x6fd4)[0x55dca57b9fd4]
+[node070:98380] [11] ./target/release/hpccg-rs(+0xf495)[0x55dca57c2495]
+[node070:98380] [12] ./target/release/hpccg-rs(+0x109bc)[0x55dca57c39bc]
+[node070:98380] [13] ./target/release/hpccg-rs(+0x97a3)[0x55dca57bc7a3]
+[node070:98380] [14] ./target/release/hpccg-rs(+0x9d71)[0x55dca57bcd71]
+[node070:98380] [15] /lib64/libc.so.6(__libc_start_main+0xf3)[0x154a314f1493]
+[node070:98380] [16] ./target/release/hpccg-rs(+0x96de)[0x55dca57bc6de]
+[node070:98380] *** End of error message ***
+thread 'main' panicked at src/hpccg/make_local_matrix.rs:107:25:
+Must increase `MAX_EXTERNAL` from 100000
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[node069:1698507] *** Process received signal ***
+[node069:1698507] Signal: Aborted (6)
+[node069:1698507] Signal code:  (-6)
+[node069:1698507] [ 0] /lib64/libpthread.so.0(+0x12b20)[0x14e9f8f5db20]
+[node069:1698507] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x14e9f8bbd37f]
+[node069:1698507] [ 2] /lib64/libc.so.6(abort+0x127)[0x14e9f8ba7db5]
+[node069:1698507] [ 3] ./target/release/hpccg-rs(+0x23a67)[0x55c0734d8a67]
+[node069:1698507] [ 4] ./target/release/hpccg-rs(+0x23a56)[0x55c0734d8a56]
+[node069:1698507] [ 5] ./target/release/hpccg-rs(+0x56ae6)[0x55c07350bae6]
+[node069:1698507] [ 6] ./target/release/hpccg-rs(+0x58af9)[0x55c07350daf9]
+[node069:1698507] [ 7] ./target/release/hpccg-rs(+0x5882c)[0x55c07350d82c]
+[node069:1698507] [ 8] ./target/release/hpccg-rs(+0x58786)[0x55c07350d786]
+[node069:1698507] [ 9] ./target/release/hpccg-rs(+0x58771)[0x55c07350d771]
+[node069:1698507] [10] ./target/release/hpccg-rs(+0x6fd4)[0x55c0734bbfd4]
+[node069:1698507] [11] ./target/release/hpccg-rs(+0xf495)[0x55c0734c4495]
+[node069:1698507] [12] ./target/release/hpccg-rs(+0x109bc)[0x55c0734c59bc]
+[node069:1698507] [13] ./target/release/hpccg-rs(+0x97a3)[0x55c0734be7a3]
+[node069:1698507] [14] ./target/release/hpccg-rs(+0x9d71)[0x55c0734bed71]
+[node069:1698507] [15] /lib64/libc.so.6(__libc_start_main+0xf3)[0x14e9f8ba9493]
+[node069:1698507] [16] ./target/release/hpccg-rs(+0x96de)[0x55c0734be6de]
+[node069:1698507] *** End of error message ***
+thread 'main' panicked at src/hpccg/make_local_matrix.rs:107:25:
+Must increase `MAX_EXTERNAL` from 100000
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[node064:380800] *** Process received signal ***
+[node064:380800] Signal: Aborted (6)
+[node064:380800] Signal code:  (-6)
+[node064:380800] [ 0] /lib64/libpthread.so.0(+0x12b20)[0x14d4d69ddb20]
+[node064:380800] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x14d4d663d37f]
+[node064:380800] [ 2] /lib64/libc.so.6(abort+0x127)[0x14d4d6627db5]
+[node064:380800] [ 3] ./target/release/hpccg-rs(+0x23a67)[0x55ab1ad89a67]
+[node064:380800] [ 4] ./target/release/hpccg-rs(+0x23a56)[0x55ab1ad89a56]
+[node064:380800] [ 5] ./target/release/hpccg-rs(+0x56ae6)[0x55ab1adbcae6]
+[node064:380800] [ 6] ./target/release/hpccg-rs(+0x58af9)[0x55ab1adbeaf9]
+[node064:380800] [ 7] ./target/release/hpccg-rs(+0x5882c)[0x55ab1adbe82c]
+[node064:380800] [ 8] ./target/release/hpccg-rs(+0x58786)[0x55ab1adbe786]
+[node064:380800] [ 9] ./target/release/hpccg-rs(+0x58771)[0x55ab1adbe771]
+[node064:380800] [10] ./target/release/hpccg-rs(+0x6fd4)[0x55ab1ad6cfd4]
+[node064:380800] [11] ./target/release/hpccg-rs(+0xf495)[0x55ab1ad75495]
+[node064:380800] [12] ./target/release/hpccg-rs(+0x109bc)[0x55ab1ad769bc]
+[node064:380800] [13] ./target/release/hpccg-rs(+0x97a3)[0x55ab1ad6f7a3]
+[node064:380800] [14] ./target/release/hpccg-rs(+0x9d71)[0x55ab1ad6fd71]
+[node064:380800] [15] /lib64/libc.so.6(__libc_start_main+0xf3)[0x14d4d6629493]
+[node064:380800] [16] ./target/release/hpccg-rs(+0x96de)[0x55ab1ad6f6de]
+[node064:380800] *** End of error message ***
+--------------------------------------------------------------------------
+mpirun noticed that process rank 3 with PID 380801 on node node064 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+real 8.38
+user 7.96
+sys 3.77
