@@ -1,0 +1,121 @@
+===== CONFIGURATION =====
+=== MODULE LOADS ===
+=== ENVIRONMENT VARIABLES ===
+OMP_NUM_THREADS=32
+RAYON_NUM_THREADS=32
+=== CPU ARCHITECTURE ===
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              48
+On-line CPU(s) list: 0-47
+Thread(s) per core:  1
+Core(s) per socket:  24
+Socket(s):           2
+NUMA node(s):        4
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               85
+Model name:          Intel(R) Xeon(R) Platinum 8268 CPU @ 2.90GHz
+Stepping:            7
+CPU MHz:             3499.992
+BogoMIPS:            5800.00
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            1024K
+L3 cache:            36608K
+NUMA node0 CPU(s):   0,4,8,12,16,20,24,28,32,36,40,44
+NUMA node1 CPU(s):   1,5,9,13,17,21,25,29,33,37,41,45
+NUMA node2 CPU(s):   2,6,10,14,18,22,26,30,34,38,42,46
+NUMA node3 CPU(s):   3,7,11,15,19,23,27,31,35,39,43,47
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single intel_ppin ssbd mba ibrs ibpb stibp ibrs_enhanced fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts pku ospke avx512_vnni md_clear flush_l1d arch_capabilities
+=== SLURM CONFIG ===
+JobId=799737 JobName=cpp-hybridczvgl3_g.sbatch
+   UserId=csuxvf(18094) GroupId=csuxvf(18094) MCS_label=N/A
+   Priority=759208 Nice=0 Account=dcsug QOS=dcsug
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:02 TimeLimit=00:10:00 TimeMin=N/A
+   SubmitTime=2024-04-13T21:15:08 EligibleTime=2024-04-13T21:17:59
+   AccrueTime=2024-04-13T21:17:59
+   StartTime=2024-04-13T21:33:57 EndTime=2024-04-13T21:43:57 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-04-13T21:33:57
+   Partition=compute AllocNode:Sid=login01:3766725
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=node[002,004-006]
+   BatchHost=node002
+   NumNodes=4 NumCPUs=128 NumTasks=4 CPUs/Task=32 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=128,mem=160000M,node=4,billing=128
+   Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=*
+   MinCPUsNode=32 MinMemoryNode=40000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=MCS Contiguous=0 Licenses=(null) Network=(null)
+   Command=/gpfs/home/dcs/csuxvf/Desktop/hpccg-rs/hpc-multibench/cpp-hybridczvgl3_g.sbatch
+   WorkDir=/gpfs/home/dcs/csuxvf/Desktop/hpccg-rs/hpc-multibench
+   StdErr=/gpfs/home/dcs/csuxvf/Desktop/hpccg-rs/hpc-multibench/results/hybrid/cpp-hybrid__799737.out
+   StdIn=/dev/null
+   StdOut=/gpfs/home/dcs/csuxvf/Desktop/hpccg-rs/hpc-multibench/results/hybrid/cpp-hybrid__799737.out
+   Power=
+   NtasksPerTRES:0
+
+=== RUN INSTANTIATION ===
+{args: 150 150 150, sbatch_config: {nodes: 4, ntasks-per-node: 1, cpus-per-task: 32}, environment_variables: {OMP_NUM_THREADS: 32, RAYON_NUM_THREADS: 32}}
+
+===== BUILD =====
+run configuration was pre-built
+
+===== RUN =====
+Initial Residual = 7334.82
+Iteration = 15   Residual = 100.54
+Iteration = 30   Residual = 0.677588
+Iteration = 45   Residual = 0.00455341
+Iteration = 60   Residual = 2.99001e-05
+Iteration = 75   Residual = 1.7579e-07
+Iteration = 90   Residual = 8.95429e-10
+Iteration = 105   Residual = 6.18687e-12
+Iteration = 120   Residual = 4.02974e-14
+Iteration = 135   Residual = 2.65769e-16
+Iteration = 149   Residual = 2.63595e-18
+Mini-Application Name: hpccg
+Mini-Application Version: 1.0
+Parallelism: 
+  Number of MPI ranks: 4
+  Number of OpenMP threads: 32
+Dimensions: 
+  nx: 150
+  ny: 150
+  nz: 150
+Number of iterations: 149
+Final residual: 2.63595e-18
+#********** Performance Summary (times in sec) ***********: 
+Time Summary: 
+  Total   : 17.9937
+  DDOT    : 1.42029
+  WAXPBY  : 1.80553
+  SPARSEMV: 14.7467
+FLOPS Summary: 
+  Total   : 1.28736e+11
+  DDOT    : 8.046e+09
+  WAXPBY  : 1.2069e+10
+  SPARSEMV: 1.08621e+11
+MFLOPS Summary: 
+  Total   : 7154.51
+  DDOT    : 5665.04
+  WAXPBY  : 6684.45
+  SPARSEMV: 7365.78
+DDOT Timing Variations: 
+  Min DDOT MPI_Allreduce time: 0.0203005
+  Max DDOT MPI_Allreduce time: 0.209255
+  Avg DDOT MPI_Allreduce time: 0.0914082
+SPARSEMV OVERHEADS: 
+  SPARSEMV MFLOPS W OVERHEAD: 7214.48
+  SPARSEMV PARALLEL OVERHEAD Time: 0.309267
+  SPARSEMV PARALLEL OVERHEAD Pct: 2.05412
+  SPARSEMV PARALLEL OVERHEAD Setup Time: 0.291539
+  SPARSEMV PARALLEL OVERHEAD Setup Pct: 1.93637
+  SPARSEMV PARALLEL OVERHEAD Bdry Exch Time: 0.0177286
+  SPARSEMV PARALLEL OVERHEAD Bdry Exch Pct: 0.117752
+real 19.47
+user 18.54
+sys 0.57
