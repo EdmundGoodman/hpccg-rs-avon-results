@@ -10,7 +10,7 @@ run_configurations:
       - "GCC/11.3.0"
       - "likwid/5.2.2"
     environment_variables: {}
-    directory: "../0_cpp_versions/0_ref"
+    directory: "./generated_results/hpccg-rs-avon-results/hpccg-rs/0_cpp_versions/0_ref"
     build_commands:
       - "make no_yaml"
       - "make -j 8"
@@ -29,7 +29,7 @@ run_configurations:
       - "Clang/13.0.1"
       - "likwid/5.2.2"
     environment_variables: {}
-    directory: "../5_iterators"
+    directory: "./generated_results/hpccg-rs-avon-results/hpccg-rs/5_iterators"
     build_commands:
       - "cargo build --release"
     run_command: "likwid-perfctr -C S0:1/ -g MEM ./target/release/hpccg-rs"
@@ -46,7 +46,7 @@ run_configurations:
       - "GCC/11.3.0"
       - "likwid/5.2.2"
     environment_variables: {}
-    directory: "../0_cpp_versions/1_openmp"
+    directory: "./generated_results/hpccg-rs-avon-results/hpccg-rs/0_cpp_versions/1_openmp"
     build_commands:
       - "make no_yaml"
       - "make -j 8"
@@ -65,7 +65,7 @@ run_configurations:
       - "Clang/13.0.1"
       - "likwid/5.2.2"
     environment_variables: {}
-    directory: "../6_parallel"
+    directory: "./generated_results/hpccg-rs-avon-results/hpccg-rs/6_parallel"
     build_commands:
       - "cargo build --release"
     run_command: "likwid-perfctr -C 0-16 -g MEM ./target/release/hpccg-rs"
@@ -80,7 +80,7 @@ run_configurations:
       - "GCC/11.3.0"
       - "OpenMPI/4.1.4"
     environment_variables: {}
-    directory: "../0_cpp_versions/2_mpi"
+    directory: "./generated_results/hpccg-rs-avon-results/hpccg-rs/0_cpp_versions/2_mpi"
     build_commands:
       - "make no_yaml"
       - "make -j 8"
@@ -95,7 +95,7 @@ run_configurations:
       - "Clang/13.0.1"
       - "OpenMPI/4.1.4"
     environment_variables: {}
-    directory: "../7_mpi"
+    directory: "./generated_results/hpccg-rs-avon-results/hpccg-rs/7_mpi"
     build_commands:
       - "cargo build --release"
     run_command: "mpirun likwid-perfctr -C S0:1/ -g MEM ./target/release/hpccg-rs"
