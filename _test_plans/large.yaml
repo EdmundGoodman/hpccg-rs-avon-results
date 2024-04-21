@@ -1,0 +1,84 @@
+run_configurations:
+  "cpp-hybrid":
+    sbatch_config:
+      "exclusive": "mcs"
+      "mem": 40000
+    module_loads:
+      - "GCC/11.3.0"
+      - "OpenMPI/4.1.4"
+    environment_variables: {}
+    directory: "./generated_results/hpccg-rs-avon-results/hpccg-rs/0_cpp_versions/3_hybrid"
+    build_commands:
+      - "make no_yaml"
+      - "make -j 8"
+    run_command: "mpirun ./test_HPCCG"
+
+  "rust-hybrid":
+    sbatch_config:
+      "exclusive": "mcs"
+      "mem": 40000
+    module_loads:
+      - "GCC/11.3.0"
+      - "Clang/13.0.1"
+      - "OpenMPI/4.1.4"
+    environment_variables: {}
+    directory: "./generated_results/hpccg-rs-avon-results/hpccg-rs/8_hybrid"
+    build_commands:
+      - "cargo build --release"
+    run_command: "mpirun ./target/release/hpccg-rs"
+
+benches:
+  "hybrid":
+    reruns:
+      number: 2
+      unaggregatable_metrics:
+        - "Mesh x size"
+        - "Mesh y size"
+        - "Mesh z size"
+        - "Mesh size"
+        - "Nodes"
+        - "Tasks"
+        - "Threads"
+    run_configurations:
+      - "cpp-hybrid"
+      - "rust-hybrid"
+    matrix:
+      args:
+        - "100 100 100"
+        - "400 400 400"
+        - "800 800 800"
+        - "1200 1200 1200"
+      [sbatch_config, environment_variables]:
+        - [
+            { "nodes": 10, "ntasks-per-node": 1, "cpus-per-task": 48 },
+            { "OMP_NUM_THREADS": 48, "RAYON_NUM_THREADS": 48 },
+          ]
+    analysis:
+      metrics:
+        "Mesh x size": "nx: (\\d+)"
+        "Mesh y size": "ny: (\\d+)"
+        "Mesh z size": "nz: (\\d+)"
+        "Nodes": "=== SLURM CONFIG ===[\\s\\S]*NumNodes=(\\d+)"
+        "Tasks": "=== SLURM CONFIG ===[\\s\\S]*NumTasks=(\\d+)"
+        "Threads": "=== RUN INSTANTIATION ===\n\\{.*sbatch_config: \\{.*cpus-per-task: (\\d+).*\\}"
+        "Total time (s)": "Time Summary:[\\s\\S]*Total\\s*: ([\\d\\.]+)[\\s\\S]*\nFLOPS Summary"
+        "Wall time (s)": "real\\s([\\d\\.]+)\nuser"
+      derived_metrics:
+        "Execution time relative to C++": "metrics['Total time (s)'] / _corresponding_metrics['cpp-hybrid']['Total time (s)']"
+        "Total speedup": "_sequential_metrics[0]['Total time (s)'] / metrics['Total time (s)']"
+        "Mesh size": "int(metrics['Mesh x size']) * int(metrics['Mesh y size']) * int(metrics['Mesh z size'])"
+      line_plots:
+        - title: "MPI & Multi-Threading Implementation Comparison"
+          x: "Mesh size"
+          y: "Total time (s)"
+        - title: "MPI & Multi-Threading Implementation Relative Execution Times"
+          x: "Mesh size"
+          y: "Execution time relative to C++"
+        - title: "MPI & Multi-Threading Implementation Speedup"
+          x: "Mesh size"
+          y: "Total speedup"
+      bar_charts:
+        - title: "MPI & Multi-Threading Implementation Comparison"
+          y: "Total time (s)"
+          fix_metrics:
+            "Mesh x size": "600"
