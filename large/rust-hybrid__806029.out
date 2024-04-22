@@ -1,0 +1,184 @@
+===== CONFIGURATION =====
+=== MODULE LOADS ===
+=== ENVIRONMENT VARIABLES ===
+OMP_NUM_THREADS=48
+RAYON_NUM_THREADS=48
+=== CPU ARCHITECTURE ===
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              48
+On-line CPU(s) list: 0-47
+Thread(s) per core:  1
+Core(s) per socket:  24
+Socket(s):           2
+NUMA node(s):        4
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               85
+Model name:          Intel(R) Xeon(R) Platinum 8268 CPU @ 2.90GHz
+Stepping:            7
+CPU MHz:             3500.015
+BogoMIPS:            5800.00
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            1024K
+L3 cache:            36608K
+NUMA node0 CPU(s):   0,4,8,12,16,20,24,28,32,36,40,44
+NUMA node1 CPU(s):   1,5,9,13,17,21,25,29,33,37,41,45
+NUMA node2 CPU(s):   2,6,10,14,18,22,26,30,34,38,42,46
+NUMA node3 CPU(s):   3,7,11,15,19,23,27,31,35,39,43,47
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single intel_ppin ssbd mba ibrs ibpb stibp ibrs_enhanced fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts pku ospke avx512_vnni md_clear flush_l1d arch_capabilities
+=== SLURM CONFIG ===
+JobId=806029 JobName=rust-hybridwia9btle.sbatch
+   UserId=csuxvf(18094) GroupId=csuxvf(18094) MCS_label=N/A
+   Priority=389858 Nice=0 Account=dcsug QOS=dcsug
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:02 TimeLimit=00:10:00 TimeMin=N/A
+   SubmitTime=2024-04-21T02:15:45 EligibleTime=2024-04-21T03:32:07
+   AccrueTime=2024-04-21T03:32:07
+   StartTime=2024-04-21T04:32:07 EndTime=2024-04-21T04:42:07 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-04-21T04:32:07
+   Partition=compute AllocNode:Sid=login01:1784943
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=node[122,129,140,159,174]
+   BatchHost=node122
+   NumNodes=5 NumCPUs=240 NumTasks=5 CPUs/Task=48 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=240,mem=200000M,node=5,billing=240
+   Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=*
+   MinCPUsNode=48 MinMemoryNode=40000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=MCS Contiguous=0 Licenses=(null) Network=(null)
+   Command=/gpfs/home/dcs/csuxvf/Desktop/hpc-multibench/rust-hybridwia9btle.sbatch
+   WorkDir=/gpfs/home/dcs/csuxvf/Desktop/hpc-multibench
+   StdErr=/gpfs/home/dcs/csuxvf/Desktop/hpc-multibench/results/hybrid/rust-hybrid__806029.out
+   StdIn=/dev/null
+   StdOut=/gpfs/home/dcs/csuxvf/Desktop/hpc-multibench/results/hybrid/rust-hybrid__806029.out
+   Power=
+   NtasksPerTRES:0
+
+=== RUN INSTANTIATION ===
+{args: 1200 1200 1200, sbatch_config: {nodes: 5, ntasks-per-node: 1, cpus-per-task: 48}, environment_variables: {OMP_NUM_THREADS: 48, RAYON_NUM_THREADS: 48}}
+
+===== BUILD =====
+run configuration was pre-built
+
+===== RUN =====
+memory allocation of 373248000000 bytes failed
+memory allocation of 373248000000 bytes failed
+memory allocation of 373248000000 bytes failed
+[node122:1259284] *** Process received signal ***
+[node122:1259284] Signal: Aborted (6)
+[node122:1259284] Signal code:  (-6)
+[node129:2234159] *** Process received signal ***
+[node129:2234159] Signal: Aborted (6)
+[node129:2234159] Signal code:  (-6)
+memory allocation of 373248000000 bytes failed
+[node174:3772975] *** Process received signal ***
+[node174:3772975] Signal: Aborted (6)
+[node174:3772975] Signal code:  (-6)
+[node122:1259284] [ 0] /lib64/libpthread.so.0(+0x12b20)[0x14db6fb96b20]
+[node122:1259284] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x14db6f5f237f]
+[node122:1259284] [ 2] /lib64/libc.so.6(abort+0x127)[0x14db6f5dcdb5]
+[node122:1259284] [ 3] ./target/release/hpccg-rs(+0x37d47)[0x562bf50ead47]
+[node122:1259284] [ 4] ./target/release/hpccg-rs(+0xd316)[0x562bf50c0316]
+[node122:1259284] [ 5] ./target/release/hpccg-rs(+0x6aa9b)[0x562bf511da9b]
+[node122:1259284] [ 6] ./target/release/hpccg-rs(+0x6aaaf)[0x562bf511daaf]
+[node122:1259284] [ 7] ./target/release/hpccg-rs(+0x2b816)[0x562bf50de816]
+[node122:1259284] [ 8] ./target/release/hpccg-rs(+0x8c2f)[0x562bf50bbc2f]
+[node122:1259284] [ 9] ./target/release/hpccg-rs(+0x1846b)[0x562bf50cb46b]
+[node122:1259284] [10] ./target/release/hpccg-rs(+0xf123)[0x562bf50c2123]
+[node122:1259284] [11] ./target/release/hpccg-rs(+0xf159)[0x562bf50c2159]
+[node122:1259284] [12] ./target/release/hpccg-rs(+0x37b08)[0x562bf50eab08]
+[node122:1259284] [13] ./target/release/hpccg-rs(+0xf144)[0x562bf50c2144]
+[node122:1259284] [14] /lib64/libc.so.6(__libc_start_main+0xf3)[0x14db6f5de493]
+[node122:1259284] [15] ./target/release/hpccg-rs(+0xd67e)[0x562bf50c067e]
+[node122:1259284] *** End of error message ***
+[node140:3826964] *** Process received signal ***
+[node174:3772975] [ 0] memory allocation of 373248000000 bytes failed
+[node129:2234159] [ 0] /lib64/libpthread.so.0(+0x12b20)[0x153b2e376b20]
+[node129:2234159] [ 1] [node140:3826964] Signal: Aborted (6)
+[node140:3826964] Signal code:  (-6)
+/lib64/libpthread.so.0(+0x12b20)[0x1468cbd0fb20]
+[node174:3772975] [ 1] [node159:3073048] *** Process received signal ***
+[node140:3826964] [ 0] /lib64/libpthread.so.0(+0x12b20)[0x1477d05b4b20]
+[node140:3826964] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x1468cb76b37f]
+[node174:3772975] [ 2] [node159:3073048] Signal: Aborted (6)
+[node159:3073048] Signal code:  (-6)
+/lib64/libc.so.6(gsignal+0x10f)[0x153b2ddd237f]
+[node129:2234159] [ 2] /lib64/libc.so.6(gsignal+0x10f)[0x1477d001037f]
+[node140:3826964] [ 2] /lib64/libc.so.6(abort+0x127)[0x1468cb755db5]
+[node174:3772975] [ 3] ./target/release/hpccg-rs(+0x37d47)[0x55b83f8abd47]
+[node174:3772975] [ 4] [node159:3073048] [ 0] /lib64/libpthread.so.0(+0x12b20)[0x154691f19b20]
+[node159:3073048] [ 1] /lib64/libc.so.6(abort+0x127)[0x153b2ddbcdb5]
+[node129:2234159] [ 3] ./target/release/hpccg-rs(+0x37d47)[0x55bbce3b7d47]
+[node129:2234159] [ 4] ./target/release/hpccg-rs(+0xd316)[0x55bbce38d316]
+[node129:2234159] [ 5] ./target/release/hpccg-rs(+0x6aa9b)[0x55bbce3eaa9b]
+[node129:2234159] ./target/release/hpccg-rs(+0xd316)[0x55b83f881316]
+[node174:3772975] [ 5] ./target/release/hpccg-rs(+0x6aa9b)[0x55b83f8dea9b]
+[node174:3772975] [ 6] ./target/release/hpccg-rs(+0x6aaaf)[0x55b83f8deaaf]
+[node174:3772975] [ 7] ./target/release/hpccg-rs(+0x2b816)[0x55b83f89f816]
+[node174:3772975] [ 8] ./target/release/hpccg-rs(+0x8c2f)[0x55b83f87cc2f]
+[node174:3772975] [ 9] ./target/release/hpccg-rs(+0x1846b)[0x55b83f88c46b]
+[node174:3772975] [10] ./target/release/hpccg-rs(+0xf123)[0x55b83f883123]
+[node174:3772975] [11] ./target/release/hpccg-rs(+0xf159)[0x55b83f883159]
+[node174:3772975] [12] ./target/release/hpccg-rs(+0x37b08)[0x55b83f8abb08]
+[node174:3772975] [13] ./target/release/hpccg-rs(+0xf144)[0x55b83f883144]
+[node174:3772975] [14] /lib64/libc.so.6(gsignal+0x10f)[0x15469197537f]
+[node159:3073048] [ 2] [ 6] ./target/release/hpccg-rs(+0x6aaaf)[0x55bbce3eaaaf]
+[node129:2234159] [ 7] ./target/release/hpccg-rs(+0x2b816)[0x55bbce3ab816]
+[node129:2234159] [ 8] ./target/release/hpccg-rs(+0x8c2f)[0x55bbce388c2f]
+[node129:2234159] [ 9] ./target/release/hpccg-rs(+0x1846b)[0x55bbce39846b]
+[node129:2234159] [10] ./target/release/hpccg-rs(+0xf123)[0x55bbce38f123]
+[node129:2234159] [11] ./target/release/hpccg-rs(+0xf159)[0x55bbce38f159]
+[node129:2234159] [12] ./target/release/hpccg-rs(+0x37b08)[0x55bbce3b7b08]
+[node129:2234159] [13] ./target/release/hpccg-rs(+0xf144)[0x55bbce38f144]
+[node129:2234159] [14] /lib64/libc.so.6(abort+0x127)[0x1477cfffadb5]
+[node140:3826964] [ 3] ./target/release/hpccg-rs(+0x37d47)[0x55ad6faedd47]
+[node140:3826964] [ 4] ./target/release/hpccg-rs(+0xd316)[0x55ad6fac3316]
+[node140:3826964] [ 5] ./target/release/hpccg-rs(+0x6aa9b)[0x55ad6fb20a9b]
+[node140:3826964] [ 6] ./target/release/hpccg-rs(+0x6aaaf)[0x55ad6fb20aaf]
+[node140:3826964] [ 7] ./target/release/hpccg-rs(+0x2b816)[0x55ad6fae1816]
+[node140:3826964] [ 8] ./target/release/hpccg-rs(+0x8c2f)[0x55ad6fabec2f]
+[node140:3826964] [ 9] ./target/release/hpccg-rs(+0x1846b)[0x55ad6face46b]
+[node140:3826964] [10] ./target/release/hpccg-rs(+0xf123)[0x55ad6fac5123]
+[node140:3826964] [11] ./target/release/hpccg-rs(+0xf159)[0x55ad6fac5159]
+[node140:3826964] [12] ./target/release/hpccg-rs(+0x37b08)[0x55ad6faedb08]
+[node140:3826964] [13] ./target/release/hpccg-rs(+0xf144)[0x55ad6fac5144]
+[node140:3826964] [14] /lib64/libc.so.6(__libc_start_main+0xf3)[0x1468cb757493]
+[node174:3772975] [15] /lib64/libc.so.6(abort+0x127)[0x15469195fdb5]
+[node159:3073048] [ 3] ./target/release/hpccg-rs(+0x37d47)[0x5561cdc4ad47]
+[node159:3073048] [ 4] ./target/release/hpccg-rs(+0xd316)[0x5561cdc20316]
+[node159:3073048] [ 5] ./target/release/hpccg-rs(+0x6aa9b)[0x5561cdc7da9b]
+[node159:3073048] [ 6] ./target/release/hpccg-rs(+0x6aaaf)[0x5561cdc7daaf]
+[node159:3073048] /lib64/libc.so.6(__libc_start_main+0xf3)[0x153b2ddbe493]
+[node129:2234159] [15] ./target/release/hpccg-rs(+0xd67e)[0x55bbce38d67e]
+[node129:2234159] *** End of error message ***
+/lib64/libc.so.6(__libc_start_main+0xf3)[0x1477cfffc493]
+[node140:3826964] [15] ./target/release/hpccg-rs(+0xd67e)[0x55ad6fac367e]
+./target/release/hpccg-rs(+0xd67e)[0x55b83f88167e]
+[node174:3772975] *** End of error message ***
+[ 7] ./target/release/hpccg-rs(+0x2b816)[0x5561cdc3e816]
+[node159:3073048] [ 8] ./target/release/hpccg-rs(+0x8c2f)[0x5561cdc1bc2f]
+[node159:3073048] [ 9] ./target/release/hpccg-rs(+0x1846b)[0x5561cdc2b46b]
+[node159:3073048] [10] ./target/release/hpccg-rs(+0xf123)[0x5561cdc22123]
+[node159:3073048] [11] ./target/release/hpccg-rs(+0xf159)[0x5561cdc22159]
+[node159:3073048] [12] ./target/release/hpccg-rs(+0x37b08)[0x5561cdc4ab08]
+[node159:3073048] [13] ./target/release/hpccg-rs(+0xf144)[0x5561cdc22144]
+[node159:3073048] [14] /lib64/libc.so.6(__libc_start_main+0xf3)[0x154691961493]
+[node159:3073048] [15] [node140:3826964] *** End of error message ***
+./target/release/hpccg-rs(+0xd67e)[0x5561cdc2067e]
+[node159:3073048] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 4 with PID 3772975 on node node174 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+4 total processes killed (some possibly by mpirun during cleanup)
+real 3.62
+user 0.04
+sys 0.16

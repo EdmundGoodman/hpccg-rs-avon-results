@@ -1,0 +1,169 @@
+===== CONFIGURATION =====
+=== MODULE LOADS ===
+=== ENVIRONMENT VARIABLES ===
+OMP_NUM_THREADS=48
+RAYON_NUM_THREADS=48
+=== CPU ARCHITECTURE ===
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              48
+On-line CPU(s) list: 0-47
+Thread(s) per core:  1
+Core(s) per socket:  24
+Socket(s):           2
+NUMA node(s):        4
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               85
+Model name:          Intel(R) Xeon(R) Platinum 8268 CPU @ 2.90GHz
+Stepping:            7
+CPU MHz:             3501.886
+BogoMIPS:            5800.00
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            1024K
+L3 cache:            36608K
+NUMA node0 CPU(s):   0,4,8,12,16,20,24,28,32,36,40,44
+NUMA node1 CPU(s):   1,5,9,13,17,21,25,29,33,37,41,45
+NUMA node2 CPU(s):   2,6,10,14,18,22,26,30,34,38,42,46
+NUMA node3 CPU(s):   3,7,11,15,19,23,27,31,35,39,43,47
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single intel_ppin ssbd mba ibrs ibpb stibp ibrs_enhanced fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts pku ospke avx512_vnni md_clear flush_l1d arch_capabilities
+=== SLURM CONFIG ===
+JobId=806020 JobName=cpp-hybrid6cuajo7x.sbatch
+   UserId=csuxvf(18094) GroupId=csuxvf(18094) MCS_label=N/A
+   Priority=389855 Nice=0 Account=dcsug QOS=dcsug
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:08 TimeLimit=00:10:00 TimeMin=N/A
+   SubmitTime=2024-04-21T02:15:44 EligibleTime=2024-04-21T03:29:49
+   AccrueTime=2024-04-21T03:29:49
+   StartTime=2024-04-21T03:50:50 EndTime=2024-04-21T04:00:50 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-04-21T03:50:50
+   Partition=compute AllocNode:Sid=login01:1784943
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=node[122,129,140,159,174]
+   BatchHost=node122
+   NumNodes=5 NumCPUs=240 NumTasks=5 CPUs/Task=48 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=240,mem=200000M,node=5,billing=240
+   Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=*
+   MinCPUsNode=48 MinMemoryNode=40000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=MCS Contiguous=0 Licenses=(null) Network=(null)
+   Command=/gpfs/home/dcs/csuxvf/Desktop/hpc-multibench/cpp-hybrid6cuajo7x.sbatch
+   WorkDir=/gpfs/home/dcs/csuxvf/Desktop/hpc-multibench
+   StdErr=/gpfs/home/dcs/csuxvf/Desktop/hpc-multibench/results/hybrid/cpp-hybrid__806020.out
+   StdIn=/dev/null
+   StdOut=/gpfs/home/dcs/csuxvf/Desktop/hpc-multibench/results/hybrid/cpp-hybrid__806020.out
+   Power=
+   NtasksPerTRES:0
+
+=== RUN INSTANTIATION ===
+{args: 1200 1200 1200, sbatch_config: {nodes: 5, ntasks-per-node: 1, cpus-per-task: 48}, environment_variables: {OMP_NUM_THREADS: 48, RAYON_NUM_THREADS: 48}}
+
+===== BUILD =====
+run configuration was pre-built
+
+===== RUN =====
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+[node122:1255505] *** Process received signal ***
+[node122:1255505] Signal: Aborted (6)
+[node122:1255505] Signal code:  (-6)
+[node122:1255505] [ 0] /lib64/libpthread.so.0(+0x12b20)[0x14bfed06ab20]
+[node122:1255505] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x14bfeccca37f]
+[node122:1255505] [ 2] /lib64/libc.so.6(abort+0x127)[0x14bfeccb4db5]
+[node122:1255505] [ 3] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xa996a)[0x14bfed6a396a]
+[node122:1255505] [ 4] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xb51ca)[0x14bfed6af1ca]
+[node122:1255505] [ 5] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xb5235)[0x14bfed6af235]
+[node122:1255505] [ 6] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xb5489)[0x14bfed6af489]
+[node122:1255505] [ 7] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xa9577)[0x14bfed6a3577]
+[node122:1255505] [ 8] ./test_HPCCG[0x40684f]
+[node122:1255505] [ 9] ./test_HPCCG[0x404759]
+[node122:1255505] [10] /lib64/libc.so.6(__libc_start_main+0xf3)[0x14bfeccb6493]
+[node122:1255505] [11] ./test_HPCCG[0x40656e]
+[node122:1255505] *** End of error message ***
+terminate called after throwing an instance of 'std::bad_alloc'
+terminate called after throwing an instance of 'std::bad_alloc'
+terminate called after throwing an instance of 'std::bad_alloc'
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+  what():  std::bad_alloc
+  what():  std::bad_alloc
+  what():  std::bad_alloc
+[node159:3069447] *** Process received signal ***
+[node129:2230571] *** Process received signal ***
+[node129:2230571] Signal: Aborted (6)
+[node129:2230571] Signal code:  (-6)
+[node140:3823343] *** Process received signal ***
+[node174:3769351] *** Process received signal ***
+[node159:3069447] Signal: Aborted (6)
+[node159:3069447] Signal code:  (-6)
+[node129:2230571] [ 0] [node140:3823343] Signal: Aborted (6)
+[node140:3823343] Signal code:  (-6)
+[node174:3769351] Signal: Aborted (6)
+[node174:3769351] Signal code:  (-6)
+[node159:3069447] [ 0] /lib64/libpthread.so.0(+0x12b20)[0x14849b832b20]
+[node129:2230571] [ 1] [node140:3823343] [ 0] [node174:3769351] [ 0] /lib64/libpthread.so.0(+0x12b20)[0x1492560e4b20]
+[node159:3069447] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x14849b49237f]
+[node129:2230571] [ 2] /lib64/libpthread.so.0(+0x12b20)[0x1462db4cbb20]
+[node140:3823343] [ 1] /lib64/libpthread.so.0(+0x12b20)[0x14ca1ff9bb20]
+[node174:3769351] [ 1] /lib64/libc.so.6(abort+0x127)[0x14849b47cdb5]
+[node129:2230571] [ 3] /lib64/libc.so.6(gsignal+0x10f)[0x1462db12b37f]
+[node140:3823343] [ 2] /lib64/libc.so.6(gsignal+0x10f)[0x14ca1fbfb37f]
+[node174:3769351] /lib64/libc.so.6(gsignal+0x10f)[0x149255d4437f]
+[node159:3069447] [ 2] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xa996a)[0x14849be6b96a]
+[node129:2230571] [ 4] /lib64/libc.so.6(abort+0x127)[0x1462db115db5]
+[node140:3823343] [ 3] [ 2] /lib64/libc.so.6(abort+0x127)[0x149255d2edb5]
+[node159:3069447] [ 3] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xb51ca)[0x14849be771ca]
+[node129:2230571] [ 5] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xa996a)[0x1462dbb0496a]
+[node140:3823343] [ 4] /lib64/libc.so.6(abort+0x127)[0x14ca1fbe5db5]
+[node174:3769351] [ 3] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xb5235)[0x14849be77235]
+[node129:2230571] [ 6] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xb51ca)[0x1462dbb101ca]
+[node140:3823343] [ 5] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xa996a)[0x14ca205d496a]
+[node174:3769351] [ 4] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xa996a)[0x14925671d96a]
+[node159:3069447] [ 4] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xb51ca)[0x1492567291ca]
+[node159:3069447] [ 5] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xb5489)[0x14849be77489]
+[node129:2230571] [ 7] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xb5235)[0x1462dbb10235]
+[node140:3823343] [ 6] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xb51ca)[0x14ca205e01ca]
+[node174:3769351] [ 5] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xb5235)[0x149256729235]
+[node159:3069447] [ 6] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xa9577)[0x14849be6b577]
+[node129:2230571] [ 8] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xb5489)[0x1462dbb10489]
+[node140:3823343] [ 7] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xb5235)[0x14ca205e0235]
+[node174:3769351] [ 6] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xb5489)[0x149256729489]
+[node159:3069447] [ 7] ./test_HPCCG[0x40684f]
+[node129:2230571] [ 9] ./test_HPCCG[0x404759]
+[node129:2230571] [10] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xa9577)[0x1462dbb04577]
+[node140:3823343] [ 8] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xb5489)[0x14ca205e0489]
+[node174:3769351] [ 7] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xa9577)[0x14925671d577]
+[node159:3069447] [ 8] /lib64/libc.so.6(__libc_start_main+0xf3)[0x14849b47e493]
+[node129:2230571] [11] ./test_HPCCG[0x40656e]
+[node129:2230571] *** End of error message ***
+./test_HPCCG[0x40684f]
+[node140:3823343] [ 9] ./test_HPCCG[0x404759]
+[node140:3823343] [10] /scrtp/avon/eb/software/GCCcore/11.3.0/lib64/libstdc++.so.6(+0xa9577)[0x14ca205d4577]
+[node174:3769351] [ 8] ./test_HPCCG[0x40684f]
+[node159:3069447] [ 9] ./test_HPCCG[0x404759]
+[node159:3069447] [10] /lib64/libc.so.6(__libc_start_main+0xf3)[0x1462db117493]
+[node140:3823343] [11] ./test_HPCCG[0x40656e]
+[node140:3823343] *** End of error message ***
+./test_HPCCG[0x40684f]
+[node174:3769351] [ 9] ./test_HPCCG[0x404759]
+[node174:3769351] [10] /lib64/libc.so.6(__libc_start_main+0xf3)[0x149255d30493]
+[node159:3069447] [11] ./test_HPCCG[0x40656e]
+[node159:3069447] *** End of error message ***
+/lib64/libc.so.6(__libc_start_main+0xf3)[0x14ca1fbe7493]
+[node174:3769351] [11] ./test_HPCCG[0x40656e]
+[node174:3769351] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node node122 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+4 total processes killed (some possibly by mpirun during cleanup)
+real 7.36
+user 0.04
+sys 0.15

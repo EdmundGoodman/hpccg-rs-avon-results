@@ -28,7 +28,7 @@ run_configurations:
     run_command: "mpirun ./target/release/hpccg-rs"
 
 benches:
-  "hybrid":
+  "large":
     reruns:
       number: 2
       unaggregatable_metrics:

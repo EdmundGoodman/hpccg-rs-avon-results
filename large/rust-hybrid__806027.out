@@ -1,0 +1,88 @@
+===== CONFIGURATION =====
+=== MODULE LOADS ===
+=== ENVIRONMENT VARIABLES ===
+OMP_NUM_THREADS=48
+RAYON_NUM_THREADS=48
+=== CPU ARCHITECTURE ===
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              48
+On-line CPU(s) list: 0-47
+Thread(s) per core:  1
+Core(s) per socket:  24
+Socket(s):           2
+NUMA node(s):        4
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               85
+Model name:          Intel(R) Xeon(R) Platinum 8268 CPU @ 2.90GHz
+Stepping:            7
+CPU MHz:             3498.537
+BogoMIPS:            5800.00
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            1024K
+L3 cache:            36608K
+NUMA node0 CPU(s):   0,4,8,12,16,20,24,28,32,36,40,44
+NUMA node1 CPU(s):   1,5,9,13,17,21,25,29,33,37,41,45
+NUMA node2 CPU(s):   2,6,10,14,18,22,26,30,34,38,42,46
+NUMA node3 CPU(s):   3,7,11,15,19,23,27,31,35,39,43,47
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single intel_ppin ssbd mba ibrs ibpb stibp ibrs_enhanced fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts pku ospke avx512_vnni md_clear flush_l1d arch_capabilities
+=== SLURM CONFIG ===
+JobId=806027 JobName=rust-hybridbnmd55xv.sbatch
+   UserId=csuxvf(18094) GroupId=csuxvf(18094) MCS_label=N/A
+   Priority=389857 Nice=0 Account=dcsug QOS=dcsug
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:09 TimeLimit=00:10:00 TimeMin=N/A
+   SubmitTime=2024-04-21T02:15:45 EligibleTime=2024-04-21T03:32:07
+   AccrueTime=2024-04-21T03:32:07
+   StartTime=2024-04-21T04:20:07 EndTime=2024-04-21T04:30:07 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-04-21T04:20:07
+   Partition=compute AllocNode:Sid=login01:1784943
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=node[122,129,140,159,174]
+   BatchHost=node122
+   NumNodes=5 NumCPUs=240 NumTasks=5 CPUs/Task=48 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=240,mem=200000M,node=5,billing=240
+   Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=*
+   MinCPUsNode=48 MinMemoryNode=40000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=MCS Contiguous=0 Licenses=(null) Network=(null)
+   Command=/gpfs/home/dcs/csuxvf/Desktop/hpc-multibench/rust-hybridbnmd55xv.sbatch
+   WorkDir=/gpfs/home/dcs/csuxvf/Desktop/hpc-multibench
+   StdErr=/gpfs/home/dcs/csuxvf/Desktop/hpc-multibench/results/hybrid/rust-hybrid__806027.out
+   StdIn=/dev/null
+   StdOut=/gpfs/home/dcs/csuxvf/Desktop/hpc-multibench/results/hybrid/rust-hybrid__806027.out
+   Power=
+   NtasksPerTRES:0
+
+=== RUN INSTANTIATION ===
+{args: 800 800 800, sbatch_config: {nodes: 5, ntasks-per-node: 1, cpus-per-task: 48}, environment_variables: {OMP_NUM_THREADS: 48, RAYON_NUM_THREADS: 48}}
+
+===== BUILD =====
+run configuration was pre-built
+
+===== RUN =====
+Initial Residual = +9.33340e23
+Iteration = 15 , Residual = NaN
+Iteration = 30 , Residual = NaN
+Iteration = 45 , Residual = NaN
+Iteration = 60 , Residual = NaN
+slurmstepd: error: *** JOB 806027 ON node122 CANCELLED AT 2024-04-21T04:30:27 DUE TO TIME LIMIT ***
+--------------------------------------------------------------------------
+ORTE has lost communication with a remote daemon.
+
+  HNP daemon   : [[663,0],0] on node node122
+  Remote daemon: [[663,0],2] on node node140
+
+This is usually due to either a failure of the TCP network
+connection to the node, or possibly an internal failure of
+the daemon itself. We cannot recover from this failure, and
+therefore will terminate the job.
+--------------------------------------------------------------------------
+real 611.89
+user 345.87
+sys 260.71
