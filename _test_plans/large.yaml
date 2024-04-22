@@ -50,7 +50,7 @@ benches:
         - "1200 1200 1200"
       [sbatch_config, environment_variables]:
         - [
-            { "nodes": 10, "ntasks-per-node": 1, "cpus-per-task": 48 },
+            { "nodes": 5, "ntasks-per-node": 1, "cpus-per-task": 48 },
             { "OMP_NUM_THREADS": 48, "RAYON_NUM_THREADS": 48 },
           ]
     analysis:
