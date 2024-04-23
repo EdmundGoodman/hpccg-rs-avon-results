@@ -1,0 +1,143 @@
+===== CONFIGURATION =====
+=== MODULE LOADS ===
+=== ENVIRONMENT VARIABLES ===
+OMP_NUM_THREADS=32
+RAYON_NUM_THREADS=32
+=== CPU ARCHITECTURE ===
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              48
+On-line CPU(s) list: 0-47
+Thread(s) per core:  1
+Core(s) per socket:  24
+Socket(s):           2
+NUMA node(s):        4
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               85
+Model name:          Intel(R) Xeon(R) Platinum 8268 CPU @ 2.90GHz
+Stepping:            7
+CPU MHz:             3499.946
+BogoMIPS:            5800.00
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            1024K
+L3 cache:            36608K
+NUMA node0 CPU(s):   0,4,8,12,16,20,24,28,32,36,40,44
+NUMA node1 CPU(s):   1,5,9,11,13,17,21,25,29,33,41,45
+NUMA node2 CPU(s):   2,6,10,14,18,22,26,30,34,38,42,46
+NUMA node3 CPU(s):   3,7,15,19,23,27,31,35,37,39,43,47
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single intel_ppin ssbd mba ibrs ibpb stibp ibrs_enhanced fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts pku ospke avx512_vnni md_clear flush_l1d arch_capabilities
+=== SLURM CONFIG ===
+JobId=808583 JobName=cpp-hybridkp_5gq8a.sbatch
+   UserId=csuxvf(18094) GroupId=csuxvf(18094) MCS_label=N/A
+   Priority=390785 Nice=0 Account=dcsug QOS=dcsug
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:04 TimeLimit=00:10:00 TimeMin=N/A
+   SubmitTime=2024-04-22T14:10:13 EligibleTime=2024-04-22T18:50:04
+   AccrueTime=2024-04-22T18:50:04
+   StartTime=2024-04-22T22:19:32 EndTime=2024-04-22T22:29:32 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-04-22T22:19:32
+   Partition=compute AllocNode:Sid=login01:2307115
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=node[003,006,052,054]
+   BatchHost=node003
+   NumNodes=4 NumCPUs=128 NumTasks=4 CPUs/Task=32 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=128,mem=160000M,node=4,billing=128
+   Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=*
+   MinCPUsNode=32 MinMemoryNode=40000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=MCS Contiguous=0 Licenses=(null) Network=(null)
+   Command=/gpfs/home/dcs/csuxvf/Desktop/hpc-multibench/cpp-hybridkp_5gq8a.sbatch
+   WorkDir=/gpfs/home/dcs/csuxvf/Desktop/hpc-multibench
+   StdErr=/gpfs/home/dcs/csuxvf/Desktop/hpc-multibench/results/hybrid/cpp-hybrid__808583.out
+   StdIn=/dev/null
+   StdOut=/gpfs/home/dcs/csuxvf/Desktop/hpc-multibench/results/hybrid/cpp-hybrid__808583.out
+   Power=
+   NtasksPerTRES:0
+
+=== RUN INSTANTIATION ===
+{args: 600 600 600, sbatch_config: {nodes: 4, ntasks-per-node: 1, cpus-per-task: 32}, environment_variables: {OMP_NUM_THREADS: 32, RAYON_NUM_THREADS: 32}}
+
+===== BUILD =====
+run configuration was pre-built
+
+===== RUN =====
+[node006:3230434:0:3230434] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x14a550021000)
+[node006:3230434] *** Process received signal ***
+[node006:3230434] Signal: Segmentation fault (11)
+[node006:3230434] Signal code: Address not mapped (1)
+[node006:3230434] Failing at address: 0xbff00000
+[node006:3230434] [ 0] /lib64/libpthread.so.0(+0x12b20)[0x14a562b04b20]
+[node006:3230434] [ 1] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x5aeb8)[0x14a56082ceb8]
+[node006:3230434] [ 2] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x5be87)[0x14a56082de87]
+[node006:3230434] [ 3] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x51acb)[0x14a560823acb]
+[node006:3230434] [ 4] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x17a4a)[0x14a560a24a4a]
+[node006:3230434] [ 5] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(ucs_async_dispatch_handlers+0x45)[0x14a560a24b65]
+[node006:3230434] [ 6] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(ucs_async_dispatch_timerq+0xd1)[0x14a560a24c81]
+[node006:3230434] [ 7] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x1a704)[0x14a560a27704]
+[node006:3230434] [ 8] /lib64/libpthread.so.0(+0x814a)[0x14a562afa14a]
+[node006:3230434] [ 9] /lib64/libc.so.6(clone+0x43)[0x14a562829dc3]
+[node006:3230434] *** End of error message ***
+[node003:270360:0:270360] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x1535a4021000)
+[node003:270360] *** Process received signal ***
+[node003:270360] Signal: Segmentation fault (11)
+[node003:270360] Signal code: Address not mapped (1)
+[node003:270360] Failing at address: 0xbff00000
+[node003:270360] [ 0] /lib64/libpthread.so.0(+0x12b20)[0x1535b6f3eb20]
+[node003:270360] [ 1] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x5aeb8)[0x1535b4c66eb8]
+[node003:270360] [ 2] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x5be87)[0x1535b4c67e87]
+[node003:270360] [ 3] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x51acb)[0x1535b4c5dacb]
+[node003:270360] [ 4] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x17a4a)[0x1535b4e5ea4a]
+[node003:270360] [ 5] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(ucs_async_dispatch_handlers+0x45)[0x1535b4e5eb65]
+[node003:270360] [ 6] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(ucs_async_dispatch_timerq+0xd1)[0x1535b4e5ec81]
+[node003:270360] [ 7] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x1a704)[0x1535b4e61704]
+[node003:270360] [ 8] /lib64/libpthread.so.0(+0x814a)[0x1535b6f3414a]
+[node003:270360] [ 9] /lib64/libc.so.6(clone+0x43)[0x1535b6c63dc3]
+[node003:270360] *** End of error message ***
+[node054:1281970:0:1281970] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x14bdcc021000)
+[node054:1281970] *** Process received signal ***
+[node054:1281970] Signal: Segmentation fault (11)
+[node054:1281970] Signal code: Address not mapped (1)
+[node054:1281970] Failing at address: 0xbff00000
+[node054:1281970] [ 0] /lib64/libpthread.so.0(+0x12b20)[0x14bdddaa8b20]
+[node054:1281970] [ 1] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x5aeb8)[0x14bdd77d1eb8]
+[node054:1281970] [ 2] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x5be87)[0x14bdd77d2e87]
+[node054:1281970] [ 3] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x51acb)[0x14bdd77c8acb]
+[node054:1281970] [ 4] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x17a4a)[0x14bdd7999a4a]
+[node054:1281970] [ 5] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(ucs_async_dispatch_handlers+0x45)[0x14bdd7999b65]
+[node054:1281970] [ 6] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(ucs_async_dispatch_timerq+0xd1)[0x14bdd7999c81]
+[node054:1281970] [ 7] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x1a704)[0x14bdd799c704]
+[node054:1281970] [ 8] /lib64/libpthread.so.0(+0x814a)[0x14bddda9e14a]
+[node054:1281970] [ 9] /lib64/libc.so.6(clone+0x43)[0x14bddd7cddc3]
+[node054:1281970] *** End of error message ***
+[node052:1959798:0:1959798] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x14bb64021000)
+[node052:1959798] *** Process received signal ***
+[node052:1959798] Signal: Segmentation fault (11)
+[node052:1959798] Signal code: Address not mapped (1)
+[node052:1959798] Failing at address: 0xbff00000
+[node052:1959798] [ 0] /lib64/libpthread.so.0(+0x12b20)[0x14bb75100b20]
+[node052:1959798] [ 1] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x5aeb8)[0x14bb72e28eb8]
+[node052:1959798] [ 2] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x5be87)[0x14bb72e29e87]
+[node052:1959798] [ 3] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x51acb)[0x14bb72e1facb]
+[node052:1959798] [ 4] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x17a4a)[0x14bb73020a4a]
+[node052:1959798] [ 5] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(ucs_async_dispatch_handlers+0x45)[0x14bb73020b65]
+[node052:1959798] [ 6] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(ucs_async_dispatch_timerq+0xd1)[0x14bb73020c81]
+[node052:1959798] [ 7] /scrtp/avon/eb/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x1a704)[0x14bb73023704]
+[node052:1959798] [ 8] /lib64/libpthread.so.0(+0x814a)[0x14bb750f614a]
+[node052:1959798] [ 9] /lib64/libc.so.6(clone+0x43)[0x14bb74e25dc3]
+[node052:1959798] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 1 with PID 3230434 on node node006 exited on signal 11 (Segmentation fault).
+--------------------------------------------------------------------------
+3 total processes killed (some possibly by mpirun during cleanup)
+real 15.96
+user 5.98
+sys 4.73
