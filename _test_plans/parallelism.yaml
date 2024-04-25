@@ -156,11 +156,9 @@ benches:
         - title: "Serial Implementation Comparison"
           x: "Mesh size"
           y: "Total time (s)"
-          tikz_output: "tikz_outputs/parallelism/serial_line.tex"
         - title: "Serial Implementation Relative Execution Times"
           x: "Mesh size"
           y: "Execution time relative to C++"
-          tikz_output: "tikz_outputs/parallelism/serial_relative_line.tex"
         - title: "Serial Implementation Speedup"
           x: "Mesh size"
           y: "Total speedup"
@@ -212,7 +210,6 @@ benches:
           y: "Total time (s)"
           split_metrics:
             - "Num threads"
-          tikz_output: "tikz_outputs/parallelism/parallel_line.tex"
         - title: "Multi-Threaded Implementation Comparison"
           x: "Mesh size"
           y: "Total time (s)"
@@ -224,7 +221,6 @@ benches:
           y: "Execution time relative to C++"
           split_metrics:
             - "Num threads"
-          tikz_output: "tikz_outputs/parallelism/parallel_relative_line.tex"
       bar_charts:
         - title: "Multi-Threaded Implementation Comparison"
           y: "Total time (s)"
@@ -277,14 +273,12 @@ benches:
           split_metrics:
             - "Nodes"
             - "Tasks"
-          tikz_output: "tikz_outputs/parallelism/mpi_line.tex"
         - title: "MPI Implementation Relative Execution Times"
           x: "Mesh size"
           y: "Execution time relative to C++"
           split_metrics:
             - "Nodes"
             - "Tasks"
-          tikz_output: "tikz_outputs/parallelism/mpi_relative_line.tex"
       bar_charts:
         - title: "MPI Implementation Comparison"
           y: "Total time (s)"
@@ -339,11 +333,9 @@ benches:
         - title: "MPI & Multi-Threading Implementation Comparison"
           x: "Mesh size"
           y: "Total time (s)"
-          tikz_output: "tikz_outputs/parallelism/hybrid_line.tex"
         - title: "MPI & Multi-Threading Implementation Relative Execution Times"
           x: "Mesh size"
           y: "Execution time relative to C++"
-          tikz_output: "tikz_outputs/parallelism/hybrid_relative_line.tex"
         - title: "MPI & Multi-Threading Implementation Speedup"
           x: "Mesh size"
           y: "Total speedup"
